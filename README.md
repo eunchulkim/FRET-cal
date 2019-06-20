@@ -1,2 +1,1 @@
-# FRET-calculation
-Calculation for FRET rates using coordinates of Chlorophylls
+# Open source from Eunchul Kim
