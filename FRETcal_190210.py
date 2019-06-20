@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 import csv
 
 #load coordinates of Chlorophylls
-#data set should be
-#Molecule   Label   Element X   Y   Z
-#example
-#CLA	A 405	NB	244.604	280.744	222.325
-#CLA	A 405	ND	247.173	283.695	223.102
-#CLA	A 405	NA	247.45	281.078	221.843
-#CLA	A 405	NC	244.455	283.404	223.519
-#CLA	A 405	MG	245.864	282.315	222.423
+    #data set should be like below
+    #Molecule   Label   Element X   Y   Z
+    #example)
+    #CLA	A 405	NB	244.604	280.744	222.325
+    #CLA	A 405	ND	247.173	283.695	223.102
+    #CLA	A 405	NA	247.45	281.078	221.843
+    #CLA	A 405	NC	244.455	283.404	223.519
+    #CLA	A 405	MG	245.864	282.315	222.423
 
 filename = ("c2s2m2l2-pheinx_real_refine-coot-12_MgNABCD.csv")
 temp = pd.read_csv(filename)
@@ -26,9 +26,8 @@ data = temp.set_index(["Label","Element"])
 result=np.array(["Dprotein","Dmol","DChl","Aprotein","Amol","AChl", "R", "FRETrate", "Kfs"])
 n = len(label)
 
-#set n_index
+#set n_index (Reference "Gradinaru et al., Biophysics Journal 1998")
 n_index = 1.55
-# Reference "Gradinaru et al., Biophysics Journal 1998"
 
 #Calculate FRET rates
 for i in range(0,n):
@@ -70,7 +69,7 @@ for i in range(0,n):
 
                     Kfs = (DA - 3 * DR * AR) ** 2
 
-                    # constants (nm^6 ps^-1) from Gradinaru et al., Biophysics Journal 1998
+                    # constants (nm^6 ps^-1) (Reference "Gradinaru et al., Biophysics Journal 1998")
                     DChl = data.loc[(Donor, "MG"), "Mol"]
                     AChl = data.loc[(Acceptor, "MG"), "Mol"]
 
