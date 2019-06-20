@@ -1,4 +1,4 @@
-# Computational analysis of FRET rates between Chlorophylls
+# Computational analysis of Förster resonance energy transfer in photosynthetic proteins
 # from Eunchul Kim
 ekim@nagoya-u.jp
 echulkim@gmail.com
