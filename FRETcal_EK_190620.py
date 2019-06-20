@@ -3,11 +3,9 @@
 #import packages
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import csv
 
 #load coordinates of Chlorophylls
-    #data set should be like below
+    #data-set should be like below in *.csv file.
     #Molecule   Label   Element X   Y   Z
     #example)
     #CLA	A 405	NB	244.604	280.744	222.325
@@ -16,7 +14,7 @@ import csv
     #CLA	A 405	NC	244.455	283.404	223.519
     #CLA	A 405	MG	245.864	282.315	222.423
 
-filename = ("c2s2m2l2-pheinx_real_refine-coot-12_MgNABCD.csv")
+filename = ("filename.csv")
 temp = pd.read_csv(filename)
 temp.replace("\t", " ")
 labeltemp = temp["Label"]
